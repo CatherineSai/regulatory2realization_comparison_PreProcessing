@@ -25,7 +25,7 @@ def read_documents(directory):
           with open(directory+'/'+fi,'r') as f:
               doc_dict[re.sub('\.txt', '', fi)] = f.read()
   except FileNotFoundError:
-    print("Wrong file or file path to dir. Check config file.")
+    print("Wrong file or file path to dir.")
     quit()
   return doc_dict
 
