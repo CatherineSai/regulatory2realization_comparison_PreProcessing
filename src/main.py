@@ -29,8 +29,9 @@ def read_documents(directory):
     quit()
   return doc_dict
 
-reg_paragraphs = read_documents(ISO_REGULATION_INPUT_DIRECTORY) 
-rea_paragraphs = read_documents(ISO_REALIZATION_INPUT_DIRECTORY) 
+# the follwoing Directories need to be adjusted according to needed regulation/ input
+reg_paragraphs = read_documents(GDPR_REGULATION_INPUT_DIRECTORY) 
+rea_paragraphs = read_documents(GDPR_REALIZATION_INPUT_DIRECTORY) 
 
 ################################################################# END
 
@@ -42,9 +43,9 @@ pp = PreProcessing(nlp)
 reg_anaphora_resolved_paragraphs = pp.apply_anaphora_resolution(reg_paragraphs)
 rea_anaphora_resolved_paragraphs = pp.apply_anaphora_resolution(rea_paragraphs)
 # save to pickle and read in main script (which runs with python 3.9 and spacy 3)
-with open(join(RESULT_DIRECTORY,"iso_reg_para_anaphora_resolved.txt"), "wb") as fp:  
+with open(join(RESULT_DIRECTORY,"gdpr_reg_para_anaphora_resolved.txt"), "wb") as fp:  
   pickle.dump(reg_anaphora_resolved_paragraphs, fp)
-with open(join(RESULT_DIRECTORY,"iso_rea_para_anaphora_resolved.txt"), "wb") as fp:  
+with open(join(RESULT_DIRECTORY,"gdpr_rea_para_anaphora_resolved.txt"), "wb") as fp:  
   pickle.dump(rea_anaphora_resolved_paragraphs, fp)
 
 

@@ -1,3 +1,4 @@
-.dgvenv/
+.text2text_python37_venv/
 input/
+results/
 src/__pycache__
