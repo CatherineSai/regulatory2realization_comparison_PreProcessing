@@ -1,6 +1,0 @@
-.text2text_python37_venv/
-input/
-results/
-src/__pycache__
-.gitignore
-.vscode
